@@ -14,9 +14,21 @@ onClick(){
   axios.get(`https://el0.veruscoin.io/api/listunspent?ip=el0.veruscoin.io&port=17485&address=${this.props.scripthash}&eprotocol=1.4`)
       .then(res => {
         console.log(res);
+        var heighestblockUTXO = '';
+        var heigestblock = 0;
+        console.log(res.data.result);
+
+
+        res.data.result.map( (thing) => {
+          console.log(thing.height);
+          if(thing.height > heigestblock){
+            heighestblockUTXO = thing.tx_hash;
+            heigestblock = thing.height;
+          }
+        });
 
         this.setState({
-          UTXO: res.data.result[0].tx_hash
+          UTXO: heighestblockUTXO
         })
         console.log(this.state.UTXO);
       });
