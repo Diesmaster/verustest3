@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "agama-wallet-lib": "git://github.com/pbca26/agama-wallet-lib.git#dev",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jquery": "^3.4.1",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.12.0",
